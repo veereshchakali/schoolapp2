@@ -1,0 +1,34 @@
+.parent{
+    height: 100vh;
+    width: 100vw;
+
+}
+.child{
+    height: 100%;
+    width: 100%;
+    background-color: aliceblue;
+    display: flex;
+}
+.left{
+    height: 100%;
+    width: 20%;
+    background-color: darkgrey;
+    text-align: center;
+}
+h2:hover {
+    background-color: cornflowerblue;
+    cursor: pointer;
+}
+.right{
+    height: 100%;
+    width: 80%;
+    background-color: thistle;
+}
+button{
+    background-color: red;
+    border: 0px;
+    border-radius: 5px;
+    margin-top: 30px;
+    height: 40px;
+    width: 80px;
+}
