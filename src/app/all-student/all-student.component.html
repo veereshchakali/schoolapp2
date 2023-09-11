@@ -1,1 +1,69 @@
-<p>all-student works!</p>
+<input type="text" [(ngModel)]="term" (keypress)="getfilterStudents()">
+
+<label>column:</label>
+<select [(ngModel)]="column">
+
+    <option>name</option>
+    <option>id</option>
+</select>
+
+<label>order:</label>
+<select [(ngModel)]="order">
+
+    <option>asc</option>
+    <option>desc</option>
+</select>
+
+<button (click)="getsortedStudents()">sort</button>
+
+<label>limit:</label>
+<select [(ngModel)]="limit">
+
+    <option>5</option>
+    <option>20</option>
+</select>
+
+<label>page:</label>
+<select [(ngModel)]="page">
+
+    <option>1</option>
+    <option>3</option>
+    <option>5</option>
+</select>
+
+<button (click)="getpagedStudents()">page</button>
+
+
+<table class="table table-white table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Sno</th>
+            <th>Name</th>
+            <th>ID</th>
+            <th>Class</th>
+            <th>FatherName</th>
+            <th>percentage</th>
+            <th>Avatar</th>
+            <th>DOB</th>
+            <th>Action</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let student of students ; let i=index ">
+           <td>{{i+1}}</td>
+            <td>{{student.name}}</td>
+            <td>{{student.id}}</td>
+            <td>{{student.class}}</td>
+            <td>{{student.fathername}}</td>
+            <td [ngStyle]="{color:student.marks>35, 'red':'green'}">{{student.percentage}}</td>
+            <td>
+                <img src="{{student.avatar}}" alt="" height="100px" width="100px">
+            </td>
+            <td>{{student.dateofbirth | date}}</td>
+            <td>
+                <button class="btn btn-danger" (click)="deleteStudents(student.id)">delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
