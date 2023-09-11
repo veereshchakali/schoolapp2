@@ -7,12 +7,13 @@ import { HomeComponent } from './home/home.component';
 import { CreateStudentComponent } from './create-student/create-student.component';
 import { AllStudentComponent } from './all-student/all-student.component';
 import { authenticationguardGuard } from './authenticationguard.guard';
+import { notifyguardGuard } from './notifyguard.guard';
 
 const routes: Routes = [
   {path:'login', component:LoginComponent},
   {path:'dashboard', component:DashboardComponent, canActivate :[authenticationguardGuard],children:[
   {path:'home', component:HomeComponent},
-  {path:'create-student', component:CreateStudentComponent},
+  {path:'create-student', component:CreateStudentComponent, canDeactivate:[notifyguardGuard]},
   {path:'all-student', component:AllStudentComponent},
   
   ]},

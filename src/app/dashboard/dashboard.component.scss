@@ -1,19 +1,22 @@
 .parent{
-    height: 100vh;
-    width: 100vw;
+//   height: 100vh;
+//   width: 100vw;
+    
 
-}
+ }
 .child{
     height: 100%;
     width: 100%;
     background-color: aliceblue;
     display: flex;
+    overflow: auto;
 }
 .left{
-    height: 100%;
+    
     width: 20%;
     background-color: darkgrey;
     text-align: center;
+    overflow: auto;
 }
 h2:hover {
     background-color: cornflowerblue;
@@ -23,6 +26,7 @@ h2:hover {
     height: 100%;
     width: 80%;
     background-color: thistle;
+   
 }
 button{
     background-color: red;
