@@ -1,15 +1,17 @@
 <div class="parent">
 
     <div class="child">
-        <h1>Student Login</h1>
-        <label>Email:</label>
-        <input type="email">
-        <br>
+        <form [formGroup]="loginForm">
+            <h1>Student Login</h1>
+            <label>Email:</label>
+            <input type="email" formControlName="email">
+            <br>
 
-        <label>Password:</label>
-        <input type="password">
-        <br>
+            <label>Password:</label>
+            <input type="password" formControlName="password">
+            <br>
+        </form>
 
-        <button routerLink="/dashboard">Login</button>
+        <button (click)="login()">Login</button>
     </div>
 </div>
