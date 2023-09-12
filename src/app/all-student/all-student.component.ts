@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AllStudentService } from '../all-student.service';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-all-student',
@@ -17,7 +18,7 @@ export class AllStudentComponent {
   public limit:string = "";
   public page:string = "";
 
-constructor(private studentService:AllStudentService){
+constructor(private studentService:AllStudentService, private router:Router){
   studentService.getStudents().subscribe(
     (data:any)=>{
       this.students = data;
@@ -71,4 +72,12 @@ deleteStudents(id:any){
     }
   )
 }
+
+view(id:number){
+this.router.navigateByUrl('/dashboard/student-details/'+id);
+}
+edit(id:number){
+  this.router.navigateByUrl('/dashboard/edit-student/'+id);
+}
+
 }

@@ -45,6 +45,8 @@
             <th>percentage</th>
             <th>Avatar</th>
             <th>DOB</th>
+            <th>View</th>
+            <th>Edit</th>
             <th>Action</th>
 
         </tr>
@@ -61,6 +63,12 @@
                 <img src="{{student.avatar}}" alt="" height="100px" width="100px">
             </td>
             <td>{{student.dateofbirth | date}}</td>
+            <td>
+                <button class="btn btn-primary" (click)="view(student.id)">View</button>
+            </td>
+            <td>
+                <button class="btn btn-success" (click)="edit(student.id)">Edit</button>
+            </td>
             <td>
                 <button class="btn btn-danger" (click)="deleteStudents(student.id)">delete</button>
             </td>

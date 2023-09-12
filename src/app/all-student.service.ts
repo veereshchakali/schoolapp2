@@ -14,6 +14,10 @@ getStudents():Observable<any>{
   return this._httpClient.get("https://64b8a34b21b9aa6eb07a012b.mockapi.io/api/students-mini/students");
 }
 
+getStudentdetails(id:any):Observable<any>{
+  return this._httpClient.get("https://64b8a34b21b9aa6eb07a012b.mockapi.io/api/students-mini/students/"+id);
+}
+
 getfilterStudents(term:any):Observable<any>{
   return this._httpClient.get("https://64b8a34b21b9aa6eb07a012b.mockapi.io/api/students-mini/students?filter="+term);
 }
@@ -26,6 +30,9 @@ createStudents(data:any):Observable<any>{
   return this._httpClient.post("https://64b8a34b21b9aa6eb07a012b.mockapi.io/api/students-mini/students",data);
 }
 
+updateStudents(id:any,data:any):Observable<any>{
+  return this._httpClient.put("https://64b8a34b21b9aa6eb07a012b.mockapi.io/api/students-mini/students/"+id,data);
+}
 getpagedStudents(limit:any,page:any):Observable<any>{
   return this._httpClient.get("https://64b8a34b21b9aa6eb07a012b.mockapi.io/api/students-mini/students?limit="+limit+"&page="+page);
 }
